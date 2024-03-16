@@ -6,11 +6,16 @@ from binance.exceptions import BinanceAPIException
 import pandas as pd
 from coinAPI_binanceList import get_auth_pair
 import time
+from dotenv import load_dotenv
+import os
+
+api_key = os.getenv("API_KEY")
+api_secret = os.getenv("API_SECRET")
 binance_list_pair = get_auth_pair()
 
 
-um_futures_client = UMFutures(key='SSXkAxuv2Zez5asJ0idZSeuPgyFD9l0ttvc0nbLZDFyQ6HwvWMIDGUlx4WGygufp',
-                              secret='YDV8uTGawx9MbnQUPZvCa29qE5uAwhOabpzWaNvvHzhfXUwNyTj4HCreJGrMkbLq')
+um_futures_client = UMFutures(key = api_key,
+                              secret = api_secret)
 # um_futures_client.klines()
 # client = Client('SSXkAxuv2Zez5asJ0idZSeuPgyFD9l0ttvc0nbLZDFyQ6HwvWMIDGUlx4WGygufp',
                             #   'YDV8uTGawx9MbnQUPZvCa29qE5uAwhOabpzWaNvvHzhfXUwNyTj4HCreJGrMkbLq')
