@@ -24,14 +24,10 @@ um_futures_client = UMFutures(key = api_key,
 
 def check_1h_rate(symbol):
     # klines = um_futures_client.klines(symbol, "1m", **{"limit": 60})
-    # klines = client.futures_klines(symbol=symbol, interval='1m', limit=60)
-    # klines = client.futures_klines(symbol=symbol, interval='1m', limit=60)
     # klines = client.get_klines(symbol=symbol, interval='15m', limit=1000)
     try:
         # Attempt to retrieve the earliest symbol kline
-        klines = um_futures_client.mark_price_klines(symbol, "1m", **{"limit": 30})
-        # klines = um_futures_client.klines(symbol, "1m", **{"limit": 60})
-        # klines = client.futures_klines(symbol=symbol, interval='1m', limit=60)
+        klines = um_futures_client.mark_price_klines(symbol, "1m", **{"limit": 120})
     except BinanceAPIException as e:
         # If a BinanceAPIException is raised, catch it and print the error message
         print(f"Error fetching Kline future status: {e.message}")
@@ -50,15 +46,13 @@ def check_1h_rate(symbol):
         result = round(temp/last_hour_price * 100, 2)
     else:
         result = 0
+        
     if result > 5 or result < -5:
         print(symbol, ": ", result, "%, price: ", current_price)
-        return {
-            "symbol": symbol,
-            "result": result
-        }
+        # return result
     # print(symbol, ": ", result, "%")
     time.sleep(0.5)
-    return None
+    return result
 
 def calculate_entry(price):
     entry_price = (2)/100 * price + price
@@ -67,52 +61,32 @@ def calculate_entry(price):
     return [str(entry_price), str(tp), str(sl)]
 try:
     while True:
+        minus = 0
+        plus = 0
+        total = {
+            "5": 0,
+            "10": 0,
+            "15": 0,
+            "100": 0,
+            "-5": 0,
+            "-10": 0,
+            "-15": 0,
+            "-100": 0
+        }
+        intervals = [(0, 5), (5, 10), (10, 15), (15, 100), (-5, 0), (-10, -5), (-15, -10), (-100, -15)]
         print(datetime.datetime.now().time())
         for i in binance_list_pair:
-            check_1h_rate(i)
-        # time.sleep(60)
+            result = check_1h_rate(i)
+            if result < 0:
+                minus += 1
+            elif result > 0:
+                plus += 1
+            for i, interval in enumerate(intervals):
+                if interval[0] <= result < interval[1]:
+                    if result >= 0: total[str(interval[1])] += 1
+                    else: total[str(interval[0])] += 1
+                    break
+        print("minus: ", minus, "plus: ", plus)
+        print(total)
 except KeyboardInterrupt:
     print("STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    # # Close the WebSocket connection on KeyboardInterrupt
-    # bsm.stop_socket(conn_key)
-    # bsm.close()
-
-#     break
-# map(check_1h_rate, binance_list_pair)
-# data = {
-#     'time' : um_futures_client.time(),
-#     'data' : [] # store trading pair,
-# }
-
-# def check_pair(pair):
-#     if "USDT" in pair['symbol']:
-#         return pair
-#     return None
-# Get account information
-# pair_list = [x for x in map(check_pair, um_futures_client.ticker_price()) if x is not None]
-# print(um_futures_client.("BTCUSDT"))
-# data['data'] = pair_list
-# data = json.dumps(data)  # to string
-# f = open("futurePair.json", "w")
-# f.write(data)
-# f.close()
-# Replace 'BTCUSDT' with the trading pair you are interested in
-# symbol = 'BTCUSDT'
-
-# # Get the 1-hour klines (candlestick) data
-# klines = client.get_klines(symbol=symbol, interval='1h', limit=2)
-
-# # Extract the price change percentage for the last 1 hour
-# price_change_1h = float(klines[0][7])  # Close price of the last 1-hour candle
-# columns = ['Open time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close time', 'Quote asset volume',
-#            'Number of trades', 'Taker buy base asset volume', 'Taker buy quote asset volume', 'Ignore']
-# df = pd.DataFrame(klines, columns=columns)
-
-# # Convert timestamp columns to datetime format
-# df['Open time'] = pd.to_datetime(df['Open time'], unit='ms')
-# df['Close time'] = pd.to_datetime(df['Close time'], unit='ms')
-# df['Rate Change (%)'] = ((df['High'].astype(float) - df['Low'].astype(float)) / df['Low'].astype(float)) * 100
-
-# # Display the updated DataFrame
-# print(df['Rate Change (%)'])
-# print(f"Price Change in the last 1 hour for {symbol}: {price_change_1h}%")
