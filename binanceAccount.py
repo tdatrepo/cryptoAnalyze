@@ -8,26 +8,34 @@ from coinAPI_binanceList import get_auth_pair
 import time
 from dotenv import load_dotenv
 import os
-
+import sys
 api_key = os.getenv("API_KEY")
 api_secret = os.getenv("API_SECRET")
 binance_list_pair = get_auth_pair()
 
+cmd_arg = sys.argv[1]
 
-um_futures_client = UMFutures(key = api_key,
-                              secret = api_secret)
+chart_dict = {
+    '30m': ['1m', 30, 1 , -5],
+    '1d': ['1h', 24, 15, -15],   
+}
+
+time_range = chart_dict[cmd_arg]
+
+# um_futures_client = UMFutures(key = api_key,
+#                               secret = api_secret)
 # um_futures_client.klines()
 # client = Client('SSXkAxuv2Zez5asJ0idZSeuPgyFD9l0ttvc0nbLZDFyQ6HwvWMIDGUlx4WGygufp',
                             #   'YDV8uTGawx9MbnQUPZvCa29qE5uAwhOabpzWaNvvHzhfXUwNyTj4HCreJGrMkbLq')
 
-# um_futures_client = UMFutures()
+um_futures_client = UMFutures()
 
 def check_1h_rate(symbol):
     # klines = um_futures_client.klines(symbol, "1m", **{"limit": 60})
     # klines = client.get_klines(symbol=symbol, interval='15m', limit=1000)
     try:
         # Attempt to retrieve the earliest symbol kline
-        klines = um_futures_client.mark_price_klines(symbol, "1m", **{"limit": 120})
+        klines = um_futures_client.mark_price_klines(symbol, time_range[0], **{"limit": time_range[1]})
     except BinanceAPIException as e:
         # If a BinanceAPIException is raised, catch it and print the error message
         print(f"Error fetching Kline future status: {e.message}")
@@ -47,7 +55,7 @@ def check_1h_rate(symbol):
     else:
         result = 0
         
-    if result > 5 or result < -5:
+    if result > time_range[2] or result < time_range[3]:
         print(symbol, ": ", result, "%, price: ", current_price)
         # return result
     # print(symbol, ": ", result, "%")
