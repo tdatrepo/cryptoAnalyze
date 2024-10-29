@@ -16,7 +16,7 @@ binance_list_pair = get_auth_pair()
 cmd_arg = sys.argv[1]
 
 chart_dict = {
-    '30m': ['1m', 30, 1 , -5],
+    '30m': ['1m', 30, 5 , -2],
     '1d': ['1h', 24, 15, -15],   
 }
 
