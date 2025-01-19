@@ -1,8 +1,93 @@
 {
+    "ADAUSDT": {
+        "symbol": "ADAUSDT",
+        "futureRate": {
+            "longValue": -14,
+            "shortValue":0,
+            "long": true,
+            "short": false,
+            "symbol": "ADAUSDT"
+        },
+        "interval": "1h",
+        "amount":24
+    },
+    "ADAUSDT2": {
+        "symbol": "ADAUSDT",
+        "futureRate": {
+            "longValue": -14,
+            "shortValue":15,
+            "long": false,
+            "short": true,
+            "symbol": "ADAUSDT"
+        },
+        "interval": "1h",
+        "amount":24
+    },
+    "LINKUSDT": {
+        "symbol": "LINKUSDT",
+        "futureRate": {
+            "longValue": -14,
+            "shortValue":0,
+            "long": true,
+            "short": false,
+            "symbol": "LINKUSDT"
+        },
+        "interval": "1h",
+        "amount":24
+    },
+    "LINKUSDT2": {
+        "symbol": "LINKUSDT",
+        "futureRate": {
+            "longValue": 0,
+            "shortValue":15,
+            "long": false,
+            "short": true,
+            "symbol": "LINKUSDT"
+        },
+        "interval": "1h",
+        "amount":24
+    },
+    "SUIUSDT": {
+        "symbol": "SUIUSDT",
+        "futureRate": {
+            "longValue": -12,
+            "shortValue":0,
+            "long": true,
+            "short": false,
+            "symbol": "SUIUSDT"
+        },
+        "interval": "1h",
+        "amount":24
+    },
+    "SUIUSDT2": {
+        "symbol": "SUIUSDT",
+        "futureRate": {
+            "longValue": 0,
+            "shortValue":15,
+            "long": false,
+            "short": true,
+            "symbol": "SUIUSDT",
+            "remark": "CHOTLOIIIII"
+        },
+        "interval": "1h",
+        "amount":24
+    },
+    "DOGEUSDT": {
+        "symbol": "DOGEUSDT",
+        "futureRate": {
+            "longValue": -12,
+            "shortValue":0,
+            "long": true,
+            "short": false,
+            "symbol": "DOGEUSDT"
+        },
+        "interval": "1h",
+        "amount":24
+    },
     "BTCUSDT": {
         "symbol": "BTCUSDT",
         "futureRate": {
-            "longValue": -5,
+            "longValue": -6,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -10,19 +95,6 @@
         },
         "interval": "1h",
         "amount":24
-    },
-    "BTCUSDT2": {
-        "symbol": "BTCUSDT",
-        "futureRate": {
-            "longValue": -3,
-            "shortValue":0,
-            "long": true,
-            "short": false,
-            "symbol": "BTCUSDT",
-            "remark": "x25"
-        },
-        "interval": "1h",
-        "amount":4
     },
     "BTCUSDT3": {
         "symbol": "BTCUSDT",
@@ -40,7 +112,7 @@
     "ETHUSDT": {
         "symbol": "ETHUSDT",
         "futureRate": {
-            "longValue": -5,
+            "longValue": -9,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -52,7 +124,7 @@
     "ETHUSDT2": {
         "symbol": "ETHUSDT",
         "futureRate": {
-            "longValue": -3,
+            "longValue": -4,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -62,10 +134,23 @@
         "interval": "1h",
         "amount":4
     },
+    "ETHUSDT3": {
+        "symbol": "ETHUSDT",
+        "futureRate": {
+            "longValue": 0,
+            "shortValue":10,
+            "long": false,
+            "short": true,
+            "symbol": "ETHUSDT",
+            "remark": "CHOTLOIIIII"
+        },
+        "interval": "1h",
+        "amount":24
+    },
     "WLDUSDT": {
         "symbol": "WLDUSDT",
         "futureRate": {
-            "longValue": -6,
+            "longValue": -13,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -74,52 +159,17 @@
         "interval": "1h",
         "amount":4
     },
-    "DOGSUSDT": {
-        "symbol": "DOGSUSDT",
+    "WLDUSDT2": {
+        "symbol": "WLDUSDT",
         "futureRate": {
             "longValue": 0,
-            "shortValue":6,
+            "shortValue":15,
             "long": false,
             "short": true,
-            "symbol": "DOGSUSDT"
+            "symbol": "WLDUSDT",
+            "remark": "CHOTLOIIIII"
         },
         "interval": "1h",
-        "amount":4
-    },
-    "HMSTRUSDT": {
-        "symbol": "HMSTRUSDT",
-        "futureRate": {
-            "longValue": 0,
-            "shortValue":6,
-            "long": false,
-            "short": true,
-            "symbol": "HMSTRUSDT"
-        },
-        "interval": "1h",
-        "amount":4
-    },
-    "CATIUSDT": {
-        "symbol": "CATIUSDT",
-        "futureRate": {
-            "longValue": 0,
-            "shortValue":6,
-            "long": false,
-            "short": true,
-            "symbol": "CATIUSDT"
-        },
-        "interval": "1h",
-        "amount":4
-    },
-    "SCRUSDT": {
-        "symbol": "SCRUSDT",
-        "futureRate": {
-            "longValue": 0,
-            "shortValue":6,
-            "long": false,
-            "short": true,
-            "symbol": "SCRUSDT"
-        },
-        "interval": "1h",
-        "amount":4
+        "amount":24
     }
 }

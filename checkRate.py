@@ -7,7 +7,7 @@ from coinAPI_binanceList import get_auth_pair
 from teleBot import send_telegram_message
 import time
 import json
-
+import datetime
 
 # Giờ đây, 'data' chứa nội dung của file JSON
 # binance_list_pair = get_auth_pair()
@@ -77,6 +77,7 @@ def check_rate_result(kwagrs):
         shortValue = kwagrs.get('shortValue') # '> 0' % change that go up
         if value > shortValue:
             msg = f'SHORT : {symbol} is growth {value}%, price: {price}, {remark}'
+            print(msg)
             send_telegram_message(msg)
         else:
             print(f'#####Not enought to short##### {symbol}: {value}% {price} , lowest: {pricePre}, {remark}')
@@ -84,6 +85,7 @@ def check_rate_result(kwagrs):
         longValue = kwagrs.get('longValue') # '< 0' % change that go down
         if value < longValue:
             msg =  f'LONG : {symbol} is down {value}%, price: {price}, {remark}'
+            print(msg)
             send_telegram_message(msg)
         else:
             print(f'#####Not enought to long##### {symbol}: {value}% {price} , highest: {pricePre}, {remark}')
@@ -103,8 +105,10 @@ if __name__ == '__main__':
                 cryptoTable = json.load(file)
             for i in cryptoTable:
                 check_rate(cryptoTable[i])
+                now = datetime.datetime.now()
+                print(now)
                 # print(i)
-                time.sleep(10)
+                time.sleep(70)
         except KeyboardInterrupt:
             keyStop = False
             print('Stop by key')
