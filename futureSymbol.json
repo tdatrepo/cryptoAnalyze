@@ -2,7 +2,7 @@
     "ADAUSDT": {
         "symbol": "ADAUSDT",
         "futureRate": {
-            "longValue": -14,
+            "longValue": -15,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -15,7 +15,7 @@
         "symbol": "ADAUSDT",
         "futureRate": {
             "longValue": -14,
-            "shortValue":15,
+            "shortValue":16,
             "long": false,
             "short": true,
             "symbol": "ADAUSDT"
@@ -26,7 +26,7 @@
     "LINKUSDT": {
         "symbol": "LINKUSDT",
         "futureRate": {
-            "longValue": -14,
+            "longValue": -16,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -39,7 +39,7 @@
         "symbol": "LINKUSDT",
         "futureRate": {
             "longValue": 0,
-            "shortValue":15,
+            "shortValue":17,
             "long": false,
             "short": true,
             "symbol": "LINKUSDT"
@@ -50,7 +50,7 @@
     "SUIUSDT": {
         "symbol": "SUIUSDT",
         "futureRate": {
-            "longValue": -12,
+            "longValue": -14,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -63,7 +63,7 @@
         "symbol": "SUIUSDT",
         "futureRate": {
             "longValue": 0,
-            "shortValue":15,
+            "shortValue":18,
             "long": false,
             "short": true,
             "symbol": "SUIUSDT",
@@ -112,7 +112,7 @@
     "ETHUSDT": {
         "symbol": "ETHUSDT",
         "futureRate": {
-            "longValue": -9,
+            "longValue": -11,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -138,7 +138,7 @@
         "symbol": "ETHUSDT",
         "futureRate": {
             "longValue": 0,
-            "shortValue":10,
+            "shortValue":15,
             "long": false,
             "short": true,
             "symbol": "ETHUSDT",
@@ -150,7 +150,7 @@
     "WLDUSDT": {
         "symbol": "WLDUSDT",
         "futureRate": {
-            "longValue": -13,
+            "longValue": -15,
             "shortValue":0,
             "long": true,
             "short": false,
@@ -163,7 +163,7 @@
         "symbol": "WLDUSDT",
         "futureRate": {
             "longValue": 0,
-            "shortValue":15,
+            "shortValue":20,
             "long": false,
             "short": true,
             "symbol": "WLDUSDT",

@@ -1,9 +1,9 @@
 import json
 from binance.um_futures import UMFutures
-from binance.client import Client
+# from binance.client import Client
 import pandas as pd
-import numpy as np
-from coinAPI_binanceList import get_auth_pair
+# import numpy as np
+# from coinAPI_binanceList import get_auth_pair
 from teleBot import send_telegram_message
 import time
 import json
@@ -15,8 +15,8 @@ import datetime
 # um_futures_client = UMFutures(key='SSXkAxuv2Zez5asJ0idZSeuPgyFD9l0ttvc0nbLZDFyQ6HwvWMIDGUlx4WGygufp',
 #                               secret='YDV8uTGawx9MbnQUPZvCa29qE5uAwhOabpzWaNvvHzhfXUwNyTj4HCreJGrMkbLq')
 um_futures_client = UMFutures()
-client = Client('SSXkAxuv2Zez5asJ0idZSeuPgyFD9l0ttvc0nbLZDFyQ6HwvWMIDGUlx4WGygufp',
-                              'YDV8uTGawx9MbnQUPZvCa29qE5uAwhOabpzWaNvvHzhfXUwNyTj4HCreJGrMkbLq')
+# client = Client('SSXkAxuv2Zez5asJ0idZSeuPgyFD9l0ttvc0nbLZDFyQ6HwvWMIDGUlx4WGygufp',
+#                               'YDV8uTGawx9MbnQUPZvCa29qE5uAwhOabpzWaNvvHzhfXUwNyTj4HCreJGrMkbLq')
 # um_futures_client = UMFutures()
 # symbol = 'BTCUSDT'
 

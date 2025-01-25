@@ -1,8 +1,8 @@
 import requests
 import json
-import time
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# import time
+# import urllib3
+# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def send_telegram_message(message: str):
     # 7109907833 AN, 7509824859 DAT
     group_id = ['7109907833', '7509824859']
